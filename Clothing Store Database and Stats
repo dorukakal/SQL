@@ -1,0 +1,36 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, status TEXT, cost INTEGER, price INTEGER);
+
+INSERT INTO store VALUES
+(1, "pants", "new", 25, 60),
+(2, "shorts", "new", 20, 40),
+(3, "sweater", "used", 20, 50),
+(4, "shirt", "new", 15, 35),
+(5, "pants", "used", 25, 60),
+(6, "sweater", "new", 25, 60),
+(7, "pants", "new", 15, 45),
+(8, "shorts", "new", 15, 45),
+(9, "pants", "used", 20, 55),
+(10, "shirt", "new", 25, 60),
+(11, "pants", "new", 25, 60),
+(12, "pants", "used", 25, 60),
+(13, "shirt", "new", 10, 35),
+(14, "pants", "new", 25, 60),
+(15, "shorts", "used", 15, 28);
+
+--display the database ordered by price. 
+
+SELECT * FROM store
+ORDER BY price asc;
+
+-- what is the total price of the goods sold
+
+SELECT SUM(price) FROM store,
+
+--what are the 5 items that have the least cost?
+
+SELECT item, cost
+FROM store
+order by cost asc
+limit 5; 
